@@ -1,0 +1,27 @@
+# requirements.txt
+# =================
+# Pinned-ish dependency list for the AI Agent Console.
+# Versions use >= to allow patch updates while avoiding breaking major
+# version bumps during deployment. For fully reproducible deployments,
+# consider freezing exact versions with `pip freeze > requirements.txt`
+# after your first successful install.
+
+# --- Core app framework ---
+streamlit>=1.37.0
+
+# --- LLM provider ---
+groq>=0.9.0
+
+# --- Search tool dependency (DuckDuckGo wrapper used by tools.py) ---
+# Recent langchain-community versions resolved DuckDuckGoSearchRun on top of
+# the "ddgs" package (the successor to "duckduckgo-search"), so both are
+# pinned to ensure the import succeeds regardless of which version resolves.
+langchain-community>=0.2.0
+ddgs>=9.0.0
+duckduckgo-search>=5.3.0
+
+# --- Environment variable management ---
+python-dotenv>=1.0.1
+
+# --- Used by assets/logo.png generation script (optional, dev-only) ---
+# Pillow>=10.0.0
